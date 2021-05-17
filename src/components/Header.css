@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.header {
+  font-family: 'Cookie', cursive;
+  display: flex;
+  height: 10vh;
+  padding: 0 2%;
+  position: fixed;
+  z-index: 21;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.568);
+  backdrop-filter: blur(5px);
+}
+
+.header__left {
+  flex: 0.4;
+  display: flex;
+  align-items: center;
+}
+
+.header__left > p {
+  margin-left: 10px;
+  font-size: 23px;
+}
+
+p {
+  color: white;
+}
+
+.header__logo {
+  width: 50px;
+}
+
+.header__right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 0.6;
+}
+
+.header__right > .MuiSvgIcon-root {
+  font-size: 35px;
+  cursor: pointer;
+  transition: 300ms;
+  fill: white;
+}
+
+.header__right > .MuiSvgIcon-root:hover {
+  transform: translateX(5px);
+  fill: black;
+}
+
+@media only screen and (max-width: 400px) {
+  .header__name {
+    display: none;
+  }
+
+  .header__logo {
+    width: 35px;
+  }
+
+  .header__right > .MuiSvgIcon-root {
+    font-size: 25px;
+  }
+}

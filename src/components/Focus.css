@@ -1,0 +1,36 @@
+.focus {
+  height: 40vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.listenNow {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 2%;
+  margin-bottom: 30px;
+}
+
+.listenNow > .MuiSvgIcon-root {
+  font-size: 40px;
+  margin-left: 5px;
+  fill: white;
+  cursor: pointer;
+}
+
+.listenNow > .MuiSvgIcon-root:hover {
+  fill: rgb(109, 109, 109);
+}
+
+.listenNow > h1 {
+  font-weight: 300;
+  color: white;
+}
+
+.focus > img {
+  width: 100%;
+  min-height: 40vh;
+}

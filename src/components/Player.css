@@ -1,0 +1,52 @@
+.player {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  top: 0;
+  z-index: 2;
+  animation: opacity 1000ms ease-in-out;
+}
+
+.player > .MuiSvgIcon-root {
+  color: white;
+  font-size: 80px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.player > .MuiSvgIcon-root:hover {
+  transform: translateY(-5px);
+}
+
+.controller > .MuiSvgIcon-root {
+  color: white;
+  font-size: 80px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.controller > .MuiSvgIcon-root:hover {
+  transform: translateY(-5px);
+}
+
+.player > p {
+  font-size: 22px;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+    transform: translateY(-400px);
+  }
+  to {
+    opacity: 1;
+  }
+}

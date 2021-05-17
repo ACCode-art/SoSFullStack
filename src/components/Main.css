@@ -1,0 +1,23 @@
+.main {
+  min-height: 100vh;
+  background: rgb(125, 93, 212);
+  background: -moz-linear-gradient(
+    97deg,
+    rgba(125, 93, 212, 1) 17%,
+    rgba(47, 153, 139, 1) 56%,
+    rgba(74, 157, 204, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    97deg,
+    rgba(125, 93, 212, 1) 17%,
+    rgba(47, 153, 139, 1) 56%,
+    rgba(74, 157, 204, 1) 100%
+  );
+  background: linear-gradient(
+    97deg,
+    rgba(125, 93, 212, 1) 17%,
+    rgba(47, 153, 139, 1) 56%,
+    rgba(74, 157, 204, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7d5dd4",endColorstr="#4a9dcc",GradientType=1);
+}
