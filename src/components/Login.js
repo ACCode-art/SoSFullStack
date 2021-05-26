@@ -1,25 +1,48 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import './Login.css';
 import logo from '../images/logo.png';
+import axios from 'axios';
 
 function Login() {
-  const API_URL = 'http://localhost:9999/user/register';
+  const API_URL_REGISTER = 'http://localhost:9999/user/register';
+  const API_URL_LOGIN = 'http://localhost:9999/user/login';
   const [usernameValue, setUsernameValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
+  const [createdMessage, setcreatedMessage] = useState('');
+  const history = useHistory();
 
-  const createUserFunction = (e) => {
+  const createUserFunction = async (e) => {
     e.preventDefault();
-    const newObject = { username: usernameValue, password: passwordValue };
-    fetch(API_URL, {
-      method: 'POST',
-      body: JSON.stringify(newObject),
-      headers: {
-        'content-type': 'application/json',
-      },
-    });
 
-    setUsernameValue('');
-    setPasswordValue('');
+    try {
+      const user = { username: usernameValue, password: passwordValue };
+
+      const res = await axios.post(API_URL_REGISTER, user);
+
+      setUsernameValue('');
+      setPasswordValue('');
+
+      setcreatedMessage('Account Created');
+    } catch (error) {
+      console.log('Error');
+      setUsernameValue('');
+      setPasswordValue('');
+    }
+  };
+
+  const loginUserFunction = async (e) => {
+    e.preventDefault();
+
+    try {
+      const user = { username: usernameValue, password: passwordValue };
+
+      const res = await axios.post(API_URL_LOGIN, user);
+
+      history.push('/main');
+    } catch (error) {
+      console.log('Error');
+    }
   };
 
   const usernameInput = (event) => {
@@ -49,11 +72,14 @@ function Login() {
             onChange={passwordInput}
             value={passwordValue}
           />
-          <button className="loginButton">Login</button>
+          <button className="loginButton" onClick={loginUserFunction}>
+            Login
+          </button>
         </form>
         <button className="registerButton" onClick={createUserFunction}>
           Create Account
         </button>
+        <p>{createdMessage}</p>
       </div>
     </div>
   );
