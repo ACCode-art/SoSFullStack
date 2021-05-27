@@ -5,8 +5,8 @@ import logo from '../images/logo.png';
 import axios from 'axios';
 
 function Login() {
-  const API_URL_REGISTER = 'http://localhost:9999/user/register';
-  const API_URL_LOGIN = 'http://localhost:9999/user/login';
+  const API_URL_REGISTER = 'http://localhost:5050/user/register';
+  const API_URL_LOGIN = 'http://localhost:5050/user/login';
   const [usernameValue, setUsernameValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
   const [createdMessage, setcreatedMessage] = useState('');

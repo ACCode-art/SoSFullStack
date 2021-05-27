@@ -3,6 +3,8 @@ import React, { useState, useEffect, createContext } from 'react';
 export const MainContext = createContext();
 
 export const MainProvider = (props) => {
+  const API_CONNECTION = 'http://localhost:5050/media';
+
   const [allTracks, setAllTracks] = useState([]);
   const [allCollections, setAllCollections] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
@@ -19,13 +21,13 @@ export const MainProvider = (props) => {
   };
 
   const getInfo = async () => {
-    const response = await fetch('http://localhost:9999/media');
+    const response = await fetch(`${API_CONNECTION}`);
     const data = await response.json();
     setAllTracks(data);
   };
 
   const getInfoTwo = async () => {
-    const response = await fetch('http://localhost:9999/media/collections');
+    const response = await fetch(`${API_CONNECTION}/collections`);
     const data = await response.json();
     setAllCollections(data);
   };

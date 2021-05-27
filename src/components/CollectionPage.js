@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import SmallMedia from './SmallMedia';
 import './CollectionPage.css';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-
 import { MainContext } from '../MainContext';
 
 function CollectionPage() {
