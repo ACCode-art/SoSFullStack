@@ -4,7 +4,9 @@ export const MainContext = createContext();
 
 export const MainProvider = (props) => {
   const API_CONNECTION = 'http://localhost:5050/media';
-
+  const [loggedUser, setLoggedUser] = useState({
+    userInformation: { username: '' },
+  });
   const [allTracks, setAllTracks] = useState([]);
   const [allCollections, setAllCollections] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
@@ -52,6 +54,8 @@ export const MainProvider = (props) => {
         showCollection,
         setShowCollection,
         showCollectionFunction,
+        loggedUser,
+        setLoggedUser,
       }}
     >
       {props.children}

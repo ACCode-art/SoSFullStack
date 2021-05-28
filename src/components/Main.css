@@ -22,3 +22,18 @@
   );
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7d5dd4",endColorstr="#4a9dcc",GradientType=1);
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+
+.welcomeMessage {
+  font-family: 'Cookie', cursive;
+  font-size: 30px !important;
+
+  display: flex;
+  align-items: center;
+  height: 10vh;
+  padding: 0 2%;
+  font-size: 25px;
+  padding-top: 10px;
+  padding-top: 10px;
+}

@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import './Login.css';
 import logo from '../images/logo.png';
 import axios from 'axios';
+
+import { MainContext } from '../MainContext';
 
 function Login() {
   const API_URL_REGISTER = 'http://localhost:5050/user/register';
   const API_URL_LOGIN = 'http://localhost:5050/user/login';
   const [usernameValue, setUsernameValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
-  const [createdMessage, setcreatedMessage] = useState('');
+  const [createdMessage, setCreatedMessage] = useState('');
   const history = useHistory();
+
+  const { loggedUser, setLoggedUser } = useContext(MainContext);
 
   const createUserFunction = async (e) => {
     e.preventDefault();
@@ -18,14 +22,17 @@ function Login() {
     try {
       const user = { username: usernameValue, password: passwordValue };
 
-      const res = await axios.post(API_URL_REGISTER, user);
+      const register = await axios
+        .post(API_URL_REGISTER, user)
+        .then((response) => setLoggedUser(response));
 
       setUsernameValue('');
       setPasswordValue('');
 
-      setcreatedMessage('Account Created');
+      setCreatedMessage('Account Created');
     } catch (error) {
-      console.log('Error');
+      setCreatedMessage('Username and password must be 6 or more characters');
+
       setUsernameValue('');
       setPasswordValue('');
     }
@@ -37,10 +44,13 @@ function Login() {
     try {
       const user = { username: usernameValue, password: passwordValue };
 
-      const res = await axios.post(API_URL_LOGIN, user);
+      const res = await axios
+        .post(API_URL_LOGIN, user)
+        .then((response) => setLoggedUser(response.data));
 
       history.push('/main');
     } catch (error) {
+      setCreatedMessage('Username or password Incorrect!');
       console.log('Error');
     }
   };
@@ -67,7 +77,7 @@ function Login() {
           />
           <input
             className="loginInput loginPassword"
-            type="text"
+            type="password"
             placeholder="password"
             onChange={passwordInput}
             value={passwordValue}
@@ -79,7 +89,7 @@ function Login() {
         <button className="registerButton" onClick={createUserFunction}>
           Create Account
         </button>
-        <p>{createdMessage}</p>
+        <p className="createdMessage">{createdMessage}</p>
       </div>
     </div>
   );
