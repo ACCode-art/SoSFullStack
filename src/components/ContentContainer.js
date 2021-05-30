@@ -14,7 +14,7 @@ function ContentContainer({ name }) {
   }, []);
 
   return (
-    <div className="contentContainer" data-aos="slide-right">
+    <div className="contentContainer" data-aos="fade-in">
       <h2 className="contentContainer__title">{name}</h2>
       <div className="contentContainer__content">
         {allTracks.map((element) => (

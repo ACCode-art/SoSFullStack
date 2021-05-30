@@ -3,8 +3,7 @@ import './SmallMedia.css';
 import { MainContext } from '../MainContext';
 
 function SmallMedia({ name, img, src }) {
-  const { currentTrack, setCurrentTrack, showPlayerFunction } =
-    useContext(MainContext);
+  const { setCurrentTrack, showPlayerFunction } = useContext(MainContext);
 
   const currentTrackInfo = () => {
     setCurrentTrack({ name: name, img: img, src: src });

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './Header.css';
 import logo from '../images/logo.png';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';

@@ -13,7 +13,7 @@ function CollectionContainer({ name }) {
   const { allCollections } = useContext(MainContext);
 
   return (
-    <div className="collectionContainer" data-aos="slide-right">
+    <div className="collectionContainer" data-aos="fade-in">
       <h2 className="collectionContainer__title">{name}</h2>
       <div className="collectionContainer__content">
         {allCollections.map((element) => (

@@ -14,7 +14,7 @@ function Login() {
   const [createdMessage, setCreatedMessage] = useState('');
   const history = useHistory();
 
-  const { loggedUser, setLoggedUser } = useContext(MainContext);
+  const { setLoggedUser } = useContext(MainContext);
 
   const createUserFunction = async (e) => {
     e.preventDefault();
@@ -22,7 +22,7 @@ function Login() {
     try {
       const user = { username: usernameValue, password: passwordValue };
 
-      const register = await axios
+      await axios
         .post(API_URL_REGISTER, user)
         .then((response) => setLoggedUser(response));
 
@@ -44,7 +44,7 @@ function Login() {
     try {
       const user = { username: usernameValue, password: passwordValue };
 
-      const res = await axios
+      await axios
         .post(API_URL_LOGIN, user)
         .then((response) => setLoggedUser(response.data));
 

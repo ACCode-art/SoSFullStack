@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import CollectionContainer from './CollectionContainer';
 import ContentContainer from './ContentContainer';
 import CollectionPage from './CollectionPage';
@@ -13,13 +13,16 @@ import { MainContext } from '../MainContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function Main() {
-  const { loggedUser } = useContext(MainContext);
+  const { loggedUser, retrieveMusicData } = useContext(MainContext);
+
+  useEffect(() => {
+    retrieveMusicData();
+  }, []);
 
   console.log(loggedUser);
   return (
     <Router>
       <div className="main">
-        <audio src=""></audio>
         <Switch>
           <Route path="/" exact>
             <Login />

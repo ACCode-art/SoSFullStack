@@ -1,5 +1,5 @@
 .focus {
-  height: 40vh;
+  height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -11,7 +11,7 @@
   bottom: 0;
   left: 0;
   margin-left: 2%;
-  margin-bottom: 30px;
+  margin-bottom: 2%;
 }
 
 .listenNow > .MuiSvgIcon-root {
@@ -28,9 +28,4 @@
 .listenNow > h1 {
   font-weight: 300;
   color: white;
-}
-
-.focus > img {
-  width: 100%;
-  min-height: 40vh;
 }

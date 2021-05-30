@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, createContext } from 'react';
 
 export const MainContext = createContext();
 
@@ -34,10 +34,10 @@ export const MainProvider = (props) => {
     setAllCollections(data);
   };
 
-  useEffect(() => {
+  const retrieveMusicData = () => {
     getInfo();
     getInfoTwo();
-  }, []);
+  };
 
   return (
     <MainContext.Provider
@@ -56,6 +56,7 @@ export const MainProvider = (props) => {
         showCollectionFunction,
         loggedUser,
         setLoggedUser,
+        retrieveMusicData,
       }}
     >
       {props.children}

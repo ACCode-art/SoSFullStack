@@ -5,7 +5,7 @@ import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import { MainContext } from '../MainContext';
 
 function CollectionMedia({ img, tracks, wholeElement }) {
-  const { currentCollection, setCurrentCollection, showCollectionFunction } =
+  const { setCurrentCollection, showCollectionFunction } =
     useContext(MainContext);
 
   const setCurrentCollectionFunction = () => {

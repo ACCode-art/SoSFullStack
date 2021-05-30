@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import './Player.css';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';

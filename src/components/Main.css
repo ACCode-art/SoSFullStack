@@ -1,26 +1,26 @@
 .main {
   overflow: hidden;
   min-height: 100vh;
-  background: rgb(125, 93, 212);
+  background: rgb(0, 0, 0);
   background: -moz-linear-gradient(
-    97deg,
-    rgba(125, 93, 212, 1) 17%,
-    rgba(47, 153, 139, 1) 56%,
-    rgba(74, 157, 204, 1) 100%
+    180deg,
+    rgba(0, 0, 0, 1) 27%,
+    rgba(45, 211, 255, 1) 87%,
+    rgba(0, 255, 188, 1) 100%
   );
   background: -webkit-linear-gradient(
-    97deg,
-    rgba(125, 93, 212, 1) 17%,
-    rgba(47, 153, 139, 1) 56%,
-    rgba(74, 157, 204, 1) 100%
+    180deg,
+    rgba(0, 0, 0, 1) 27%,
+    rgba(45, 211, 255, 1) 87%,
+    rgba(0, 255, 188, 1) 100%
   );
   background: linear-gradient(
-    97deg,
-    rgba(125, 93, 212, 1) 17%,
-    rgba(47, 153, 139, 1) 56%,
-    rgba(74, 157, 204, 1) 100%
+    180deg,
+    rgba(0, 0, 0, 1) 27%,
+    rgba(45, 211, 255, 1) 87%,
+    rgba(0, 255, 188, 1) 100%
   );
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#7d5dd4",endColorstr="#4a9dcc",GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#00ffbc",GradientType=1);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
