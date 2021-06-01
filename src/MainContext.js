@@ -13,6 +13,7 @@ export const MainProvider = (props) => {
   const [showPlayer, setShowPlayer] = useState(false);
   const [showCollection, setShowCollection] = useState(false);
   const [currentCollection, setCurrentCollection] = useState({});
+  const [showMenu, setShowMenu] = useState(false);
 
   const showPlayerFunction = () => {
     setShowPlayer(!showPlayer);
@@ -57,6 +58,8 @@ export const MainProvider = (props) => {
         loggedUser,
         setLoggedUser,
         retrieveMusicData,
+        showMenu,
+        setShowMenu,
       }}
     >
       {props.children}

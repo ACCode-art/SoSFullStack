@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import './Login.css';
 import logo from '../images/logo.png';
 import axios from 'axios';
+import video from '../images/video1.mp4';
 
 import { MainContext } from '../MainContext';
 
@@ -65,6 +66,8 @@ function Login() {
 
   return (
     <div className="login">
+      <video src={video} autoPlay loop muted></video>
+
       <div className="loginFormContainer">
         <img className="loginLogo" src={logo} alt="" />
         <form action="">

@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Header.css';
 import logo from '../images/logo.png';
-import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import MenuIcon from '@material-ui/icons/Menu';
+import { MainContext } from '../MainContext';
 
 function Header() {
+  const { showMenu, setShowMenu } = useContext(MainContext);
+
+  const showMenuHandler = () => {
+    setShowMenu(!showMenu);
+  };
   return (
     <div className="header">
       <div className="header__left">
@@ -12,7 +18,7 @@ function Header() {
       </div>
 
       <div className="header__right">
-        <ExitToAppIcon />
+        <MenuIcon onClick={showMenuHandler} />
       </div>
     </div>
   );

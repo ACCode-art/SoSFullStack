@@ -32,10 +32,16 @@ p {
 }
 
 .header__right {
+  color: white;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex: 0.6;
+}
+
+.headerPlaceholder {
+  font-size: 21px;
+  margin-right: 5px;
 }
 
 .header__right > .MuiSvgIcon-root {
@@ -47,7 +53,7 @@ p {
 
 .header__right > .MuiSvgIcon-root:hover {
   transform: translateX(5px);
-  fill: black;
+  fill: rgb(131, 131, 131);
 }
 
 @media only screen and (max-width: 400px) {
